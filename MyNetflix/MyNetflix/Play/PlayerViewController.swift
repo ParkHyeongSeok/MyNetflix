@@ -47,12 +47,12 @@ class PlayerViewController: UIViewController {
     
     func pause() {
         avplayer.pause()
-        self.playButton.isSelected = true
+        self.playButton.isSelected = false
     }
     
     func play() {
         avplayer.play()
-        self.playButton.isSelected = false
+        self.playButton.isSelected = true
     }
     
     func reset() {

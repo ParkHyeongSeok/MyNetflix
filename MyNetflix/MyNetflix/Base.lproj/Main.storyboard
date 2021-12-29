@@ -43,9 +43,6 @@
                                                 <state key="normal" title="재생" image="play.fill" catalog="system">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9nh-qs-9PR"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFB-cf-lPy">
                                                 <rect key="frame" x="47" y="447" width="50" height="30"/>
@@ -139,6 +136,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="house.fill" catalog="system" id="b1d-DE-owd"/>
                     <size key="freeformSize" width="414" height="1200"/>
+                    <connections>
+                        <outlet property="playButton" destination="Dol-3i-dLw" id="OnX-6K-rVv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
