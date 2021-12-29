@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import NSObject_Rx
 
 class SearchViewController: UIViewController {
     
@@ -15,6 +18,17 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.searchBar.becomeFirstResponder()
+        
+        searchBar.rx.searchButtonClicked
+            .withLatestFrom(searchBar.rx.text.orEmpty)
+            .bind { text in
+                self.searchBar.resignFirstResponder()
+                print(text)
+            }
+            .disposed(by: rx.disposeBag)
+        
     }
     
 }
