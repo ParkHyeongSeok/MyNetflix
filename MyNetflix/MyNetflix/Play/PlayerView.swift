@@ -11,6 +11,7 @@
 import UIKit
 import AVFoundation
 
+// 애플의 플레이어뷰
 class PlayerView: UIView {
     var player: AVPlayer? {
         get {

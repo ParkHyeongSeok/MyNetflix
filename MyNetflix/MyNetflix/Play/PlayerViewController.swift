@@ -7,16 +7,31 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import NSObject_Rx
+import AVFoundation
 
 class PlayerViewController: UIViewController {
     
+    @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var playButton: UIButton!
+    
+    let avplayer = AVPlayer()
+    
     // 화면 방향 설정
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscapeRight
+        return .landscape
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+            
+        playButton.rx.tap
+            .bind(onNext: {
+                self.playButton.isSelected.toggle()
+            })
+            .disposed(by: rx.disposeBag)
     }
     
 
@@ -25,9 +40,9 @@ class PlayerViewController: UIViewController {
     }
 }
 
-//extension AVPlayer {
-//    var isPlaying: Bool {
-//        guard self.currentItem != nil else { return false }
-//        return self.rate != 0
-//    }
-//}
+extension AVPlayer {
+    var isPlaying: Bool {
+        guard self.currentItem != nil else { return false }
+        return self.rate != 0
+    }
+}
