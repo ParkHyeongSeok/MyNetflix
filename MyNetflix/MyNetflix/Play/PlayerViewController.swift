@@ -14,7 +14,7 @@ import AVFoundation
 
 class PlayerViewController: UIViewController {
     
-    @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var playerView: PlayerView!
     @IBOutlet weak var playButton: UIButton!
     
     let avplayer = AVPlayer()
@@ -29,14 +29,46 @@ class PlayerViewController: UIViewController {
             
         playButton.rx.tap
             .bind(onNext: {
-                self.playButton.isSelected.toggle()
+                if self.avplayer.isPlaying {
+                    self.pause()
+                } else {
+                    self.play()
+                }
             })
             .disposed(by: rx.disposeBag)
+        
+        playerView.player = avplayer
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        play()
+    }
+    
+    func pause() {
+        avplayer.pause()
+        self.playButton.isSelected = true
+    }
+    
+    func play() {
+        avplayer.play()
+        self.playButton.isSelected = false
+    }
+    
+    func reset() {
+        pause()
+        avplayer.replaceCurrentItem(with: nil)
+    }
+    
     @IBAction func closeButtonTapped(_ sender: Any) {
+        reset()
         dismiss(animated: false, completion: nil)
+    }
+}
+
+extension PlayerViewController {
+    func rendering(item: AVPlayerItem) {
+        avplayer.replaceCurrentItem(with: item)
     }
 }
 
