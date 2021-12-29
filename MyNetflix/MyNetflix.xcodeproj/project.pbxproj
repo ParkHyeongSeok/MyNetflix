@@ -11,6 +11,7 @@
 		03EF4761277BFD8F00F7EF4A /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4760277BFD8F00F7EF4A /* SearchAPI.swift */; };
 		03EF4763277BFDA600F7EF4A /* SearchApiType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4762277BFDA600F7EF4A /* SearchApiType.swift */; };
 		03EF4765277BFE2B00F7EF4A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4764277BFE2B00F7EF4A /* EndPoint.swift */; };
+		03EF4767277C061500F7EF4A /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4766277C061500F7EF4A /* ResultCollectionViewCell.swift */; };
 		6AAB591FBA37028C82080E05 /* Pods_MyNetflix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C17789E4E26C7A4DC685BB4 /* Pods_MyNetflix.framework */; };
 		9409834F243468AA00FD1040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409834E243468AA00FD1040 /* AppDelegate.swift */; };
 		94098351243468AA00FD1040 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94098350243468AA00FD1040 /* SceneDelegate.swift */; };
@@ -44,6 +45,7 @@
 		03EF4760277BFD8F00F7EF4A /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
 		03EF4762277BFDA600F7EF4A /* SearchApiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchApiType.swift; sourceTree = "<group>"; };
 		03EF4764277BFE2B00F7EF4A /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		03EF4766277C061500F7EF4A /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		5ED72A6B4C4D7BFBC52FD33F /* Pods-MyNetflix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNetflix.debug.xcconfig"; path = "Target Support Files/Pods-MyNetflix/Pods-MyNetflix.debug.xcconfig"; sourceTree = "<group>"; };
 		9409834B243468AA00FD1040 /* MyNetflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNetflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9409834E243468AA00FD1040 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				94DFD7542435DA88009687ED /* SearchViewController.swift */,
+				03EF4766277C061500F7EF4A /* ResultCollectionViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				94DFD7532435CED7009687ED /* RecommendListViewController.swift in Sources */,
 				940983632434692900FD1040 /* HomeViewController.swift in Sources */,
 				03EF4763277BFDA600F7EF4A /* SearchApiType.swift in Sources */,
+				03EF4767277C061500F7EF4A /* ResultCollectionViewCell.swift in Sources */,
 				940983652434693600FD1040 /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

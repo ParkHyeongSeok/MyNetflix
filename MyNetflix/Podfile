@@ -8,6 +8,7 @@ target 'MyNetflix' do
   pod 'RxCocoa'
   pod 'RxDataSources'
   pod 'NSObject+Rx'
+  pod 'Kingfisher'
   # Pods for MyNetflix
 
 end

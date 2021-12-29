@@ -9,9 +9,25 @@
 import Foundation
 
 struct NetworkResponse<Wrapper: Codable>: Codable {
-    var result: [Wrapper]
+    var resultCount: Int
+    var movies: [Wrapper]
+    
+    enum CodingKeys: String, CodingKey {
+        case resultCount
+        case movies = "results"
+    }
 }
 
 struct Movie: Codable {
+    let title: String
+    let director: String
+    let thumbnailPath: String
+    let previewURL: String
     
+    enum CodingKeys: String, CodingKey {
+        case title = "trackName"
+        case director = "artistName"
+        case thumbnailPath = "artworkUrl100"
+        case previewURL = "previewUrl"
+    }
 }

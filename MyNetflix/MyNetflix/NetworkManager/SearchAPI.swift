@@ -18,7 +18,8 @@ class SearchAPI: SearchApiType {
         guard let request = EndPoint.composeURLRequest(query: query) else { return .empty() }
         return self.urlSession.rx.data(request: request)
             .map { data in
-                return try JSONDecoder().decode([Movie].self, from: data)
+                let response = try JSONDecoder().decode(NetworkResponse<Movie>.self, from: data)
+                return response.movies 
             }
     }
 }
