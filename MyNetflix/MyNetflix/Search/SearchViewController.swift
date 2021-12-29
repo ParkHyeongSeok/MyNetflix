@@ -43,7 +43,7 @@ class SearchViewController: UIViewController {
                 self.resultCollectionView.deselectItem(at: indexPath, animated: false)
                 let sb = UIStoryboard(name: "Player", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "PlayerViewController") as! PlayerViewController
-                let url = URL(string: model.previewURL)!
+                guard let url = URL(string: model.previewURL ?? "") else { return }
                 let item = AVPlayerItem(url: url)
                 vc.rendering(item: item)
                 vc.modalPresentationStyle = .fullScreen

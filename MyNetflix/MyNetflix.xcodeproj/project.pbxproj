@@ -15,6 +15,7 @@
 		03EF4769277C64B600F7EF4A /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4768277C64B600F7EF4A /* RecommendViewModel.swift */; };
 		03EF476B277C655900F7EF4A /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF476A277C655900F7EF4A /* RecommendCollectionViewCell.swift */; };
 		03EF476D277C658300F7EF4A /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF476C277C658300F7EF4A /* DummyData.swift */; };
+		03EF4770277CB35500F7EF4A /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF476F277CB35500F7EF4A /* UpcomingViewController.swift */; };
 		6AAB591FBA37028C82080E05 /* Pods_MyNetflix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C17789E4E26C7A4DC685BB4 /* Pods_MyNetflix.framework */; };
 		9409834F243468AA00FD1040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409834E243468AA00FD1040 /* AppDelegate.swift */; };
 		94098351243468AA00FD1040 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94098350243468AA00FD1040 /* SceneDelegate.swift */; };
@@ -52,6 +53,7 @@
 		03EF4768277C64B600F7EF4A /* RecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
 		03EF476A277C655900F7EF4A /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		03EF476C277C658300F7EF4A /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		03EF476F277CB35500F7EF4A /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		5ED72A6B4C4D7BFBC52FD33F /* Pods-MyNetflix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNetflix.debug.xcconfig"; path = "Target Support Files/Pods-MyNetflix/Pods-MyNetflix.debug.xcconfig"; sourceTree = "<group>"; };
 		9409834B243468AA00FD1040 /* MyNetflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNetflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9409834E243468AA00FD1040 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				940983622434692900FD1040 /* HomeViewController.swift */,
+				03EF475A277BFCD700F7EF4A /* Recommend */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -146,6 +149,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		03EF476E277CB34400F7EF4A /* Upcoming */ = {
+			isa = PBXGroup;
+			children = (
+				03EF476F277CB35500F7EF4A /* UpcomingViewController.swift */,
+			);
+			path = Upcoming;
+			sourceTree = "<group>";
+		};
 		6E3C7207B717674691D23DA6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,8 +194,8 @@
 				03EF475D277BFD3B00F7EF4A /* Model */,
 				03EF4758277BFCA300F7EF4A /* Home */,
 				03EF4757277BFC9400F7EF4A /* Search */,
+				03EF476E277CB34400F7EF4A /* Upcoming */,
 				03EF475B277BFCE800F7EF4A /* Persisted */,
-				03EF475A277BFCD700F7EF4A /* Recommend */,
 				03EF4759277BFCBC00F7EF4A /* Play */,
 				94098354243468AA00FD1040 /* Main.storyboard */,
 				94098357243468AE00FD1040 /* Assets.xcassets */,
@@ -326,6 +337,7 @@
 				03EF475F277BFD5300F7EF4A /* Movie.swift in Sources */,
 				94DFD7812436F11B009687ED /* PlayerView.swift in Sources */,
 				9409834F243468AA00FD1040 /* AppDelegate.swift in Sources */,
+				03EF4770277CB35500F7EF4A /* UpcomingViewController.swift in Sources */,
 				03EF4765277BFE2B00F7EF4A /* EndPoint.swift in Sources */,
 				94098351243468AA00FD1040 /* SceneDelegate.swift in Sources */,
 				94DFD7532435CED7009687ED /* RecommendListViewController.swift in Sources */,

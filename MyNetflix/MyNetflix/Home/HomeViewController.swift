@@ -15,9 +15,9 @@ import NSObject_Rx
 class HomeViewController: UIViewController {
     
     private let searchAPI = SearchAPI()
+    
     @IBOutlet weak var playButton: UIButton!
     
-
     var awardRecommendListViewController: RecommendListViewController!
     var hotRecommendListViewController: RecommendListViewController!
     var myRecommendListViewController: RecommendListViewController!
@@ -45,12 +45,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         playButton.rx.tap
             .withLatestFrom(searchAPI.search("interstellar"))
-            .map { $0.first }
+            .compactMap { $0.first }
             .observe(on: MainScheduler.asyncInstance)
             .bind { movie in
                 let sb = UIStoryboard(name: "Player", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "PlayerViewController") as! PlayerViewController
-                let url = URL(string: movie!.previewURL)!
+                let url = URL(string: movie.previewURL ?? "")!
                 let item = AVPlayerItem(url: url)
                 vc.rendering(item: item)
                 vc.modalPresentationStyle = .fullScreen
