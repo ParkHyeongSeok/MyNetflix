@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import NSObject_Rx
+import AVFoundation
 
 class SearchViewController: UIViewController {
     
@@ -42,9 +43,14 @@ class SearchViewController: UIViewController {
                 self.resultCollectionView.deselectItem(at: indexPath, animated: false)
                 let sb = UIStoryboard(name: "Player", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "PlayerViewController") as! PlayerViewController
+                guard let url = URL(string: model.previewURL ?? "") else { return }
+                let item = AVPlayerItem(url: url)
+                vc.rendering(item: item)
+                vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
             }
             .disposed(by: rx.disposeBag)
+        
         
         
         resultCollectionView.rx.setDelegate(self)

@@ -8,9 +8,16 @@
 
 import UIKit
 import AVFoundation
+import RxSwift
+import RxCocoa
+import NSObject_Rx
 
 class HomeViewController: UIViewController {
-
+    
+    private let searchAPI = SearchAPI()
+    
+    @IBOutlet weak var playButton: UIButton!
+    
     var awardRecommendListViewController: RecommendListViewController!
     var hotRecommendListViewController: RecommendListViewController!
     var myRecommendListViewController: RecommendListViewController!
@@ -36,23 +43,20 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        playButton.rx.tap
+            .withLatestFrom(searchAPI.search("interstellar"))
+            .compactMap { $0.first }
+            .observe(on: MainScheduler.asyncInstance)
+            .bind { movie in
+                let sb = UIStoryboard(name: "Player", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "PlayerViewController") as! PlayerViewController
+                let url = URL(string: movie.previewURL ?? "")!
+                let item = AVPlayerItem(url: url)
+                vc.rendering(item: item)
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+            }
+            .disposed(by: rx.disposeBag)
     }
     
-
-    @IBAction func playButtonTapped(_ sender: Any) {
-//        SearchAPI.search("interstella") { movies in
-//            guard let interstella = movies.first else { return }
-//            DispatchQueue.main.async {
-//                let url = URL(string: interstella.previewURL)!
-//                let item = AVPlayerItem(url: url)
-//                
-//                let sb = UIStoryboard(name: "Player", bundle: nil)
-//                let vc = sb.instantiateViewController(identifier: "PlayerViewController") as! PlayerViewController
-//                vc.modalPresentationStyle = .fullScreen
-//                vc.player.replaceCurrentItem(with: item)
-//                self.present(vc, animated: false, completion: nil)
-//            }
-//        }
-    }
 }
