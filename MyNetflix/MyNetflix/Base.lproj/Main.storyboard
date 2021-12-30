@@ -249,7 +249,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjw-Dw-0Vf">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="834"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="934"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_header" translatesAutoresizingMaskIntoConstraints="NO" id="zf7-jn-mqq">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -258,24 +258,24 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j80-LB-7dc">
-                                                <rect key="frame" x="0.0" y="424" width="414" height="410"/>
+                                                <rect key="frame" x="0.0" y="424" width="414" height="510"/>
                                                 <subviews>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gww-qe-1UK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="xjB-TL-1bs"/>
+                                                            <constraint firstAttribute="height" constant="250" id="hne-9L-ciI"/>
                                                         </constraints>
                                                         <connections>
-                                                            <segue destination="JFa-ls-Fyu" kind="embed" identifier="award" id="2D6-H1-WhQ"/>
+                                                            <segue destination="JFa-ls-Fyu" kind="embed" identifier="awards" id="2D6-H1-WhQ"/>
                                                         </connections>
                                                     </containerView>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o21-ws-Oj5">
-                                                        <rect key="frame" x="0.0" y="210" width="414" height="200"/>
+                                                        <rect key="frame" x="0.0" y="260" width="414" height="250"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="Zw2-vC-89N"/>
+                                                            <constraint firstAttribute="height" constant="250" id="xvE-Wv-uZg"/>
                                                         </constraints>
                                                         <connections>
-                                                            <segue destination="up7-FT-NLH" kind="embed" identifier="hot" id="RdA-id-pe2"/>
+                                                            <segue destination="up7-FT-NLH" kind="embed" identifier="hots" id="RdA-id-pe2"/>
                                                         </connections>
                                                     </containerView>
                                                 </subviews>
@@ -576,19 +576,22 @@
             <objects>
                 <viewController id="JFa-ls-Fyu" customClass="RecommendListViewController" customModule="MyNetflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ojZ-eg-i75">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평론가 호평 미국 코미디 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGV-1w-qnd">
-                                <rect key="frame" x="8" y="6" width="155" height="19.5"/>
+                                <rect key="frame" x="8" y="6" width="155" height="69"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HNu-9b-CAU">
-                                <rect key="frame" x="8" y="31.5" width="398" height="160.5"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="160"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DT6-oq-fvV">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="2FR-LO-Azy"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="DT6-oq-fvV">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -604,6 +607,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Iw-M2-fFX">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -617,14 +621,15 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="viC-pY-uss"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aGV-1w-qnd" firstAttribute="top" secondItem="ojZ-eg-i75" secondAttribute="top" constant="6" id="8Ed-ci-Dn6"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="HNu-9b-CAU" secondAttribute="bottom" constant="8" id="8xn-Cy-ElU"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="HNu-9b-CAU" secondAttribute="bottom" constant="10" id="8xn-Cy-ElU"/>
+                            <constraint firstItem="HNu-9b-CAU" firstAttribute="top" secondItem="aGV-1w-qnd" secondAttribute="bottom" constant="5" id="MLV-cO-pya"/>
                             <constraint firstItem="aGV-1w-qnd" firstAttribute="leading" secondItem="ojZ-eg-i75" secondAttribute="leading" constant="8" id="air-94-dnV"/>
-                            <constraint firstItem="HNu-9b-CAU" firstAttribute="top" secondItem="aGV-1w-qnd" secondAttribute="bottom" constant="6" id="haY-6Y-YWA"/>
-                            <constraint firstAttribute="trailing" secondItem="HNu-9b-CAU" secondAttribute="trailing" constant="8" id="jxT-zN-hqx"/>
-                            <constraint firstItem="HNu-9b-CAU" firstAttribute="leading" secondItem="ojZ-eg-i75" secondAttribute="leading" constant="8" id="opB-d9-JCV"/>
+                            <constraint firstAttribute="trailing" secondItem="HNu-9b-CAU" secondAttribute="trailing" id="jxT-zN-hqx"/>
+                            <constraint firstItem="HNu-9b-CAU" firstAttribute="leading" secondItem="ojZ-eg-i75" secondAttribute="leading" id="opB-d9-JCV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -633,41 +638,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8y-Ef-3PF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3914" y="905"/>
+            <point key="canvasLocation" x="3913.04347826087" y="904.6875"/>
         </scene>
         <!--Recommend List View Controller-->
         <scene sceneID="Bp9-ku-xf1">
             <objects>
                 <viewController id="up7-FT-NLH" customClass="RecommendListViewController" customModule="MyNetflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qxp-lJ-Uzu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평론가 호평 미국 코미디 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5b-LL-tfY">
-                                <rect key="frame" x="8" y="6" width="155" height="19.5"/>
+                                <rect key="frame" x="8" y="6" width="155" height="69"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YVX-f3-K4R">
-                                <rect key="frame" x="8" y="50" width="398" height="142"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="160"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uoW-3s-hG8">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="sQj-pS-dMp"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="uoW-3s-hG8">
+                                    <size key="itemSize" width="128" height="145"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecommendCell" id="noF-6s-mDZ" customClass="RecommendCell" customModule="MyNetflix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6fo-1T-Jew">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-JL-GNW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="145"/>
+                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -677,6 +686,7 @@
                                                 <constraint firstItem="xKY-JL-GNW" firstAttribute="top" secondItem="6fo-1T-Jew" secondAttribute="top" id="fTw-Q7-cFi"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="128" height="145"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -685,11 +695,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="S5b-LL-tfY" firstAttribute="leading" secondItem="7qy-3P-IfF" secondAttribute="leading" constant="8" id="4Vb-8X-8xb"/>
-                            <constraint firstItem="7qy-3P-IfF" firstAttribute="trailing" secondItem="YVX-f3-K4R" secondAttribute="trailing" constant="8" id="6sy-hP-LpN"/>
-                            <constraint firstItem="7qy-3P-IfF" firstAttribute="bottom" secondItem="YVX-f3-K4R" secondAttribute="bottom" constant="8" id="7jU-eO-Bgf"/>
-                            <constraint firstItem="YVX-f3-K4R" firstAttribute="top" secondItem="7qy-3P-IfF" secondAttribute="top" constant="6" id="Edk-SD-tzB"/>
+                            <constraint firstItem="7qy-3P-IfF" firstAttribute="trailing" secondItem="YVX-f3-K4R" secondAttribute="trailing" id="6sy-hP-LpN"/>
+                            <constraint firstItem="7qy-3P-IfF" firstAttribute="bottom" secondItem="YVX-f3-K4R" secondAttribute="bottom" constant="10" id="7jU-eO-Bgf"/>
                             <constraint firstItem="S5b-LL-tfY" firstAttribute="top" secondItem="qxp-lJ-Uzu" secondAttribute="top" constant="6" id="IPj-L7-acb"/>
-                            <constraint firstItem="YVX-f3-K4R" firstAttribute="leading" secondItem="7qy-3P-IfF" secondAttribute="leading" constant="8" id="kth-ec-Msm"/>
+                            <constraint firstItem="YVX-f3-K4R" firstAttribute="leading" secondItem="7qy-3P-IfF" secondAttribute="leading" id="kth-ec-Msm"/>
+                            <constraint firstItem="YVX-f3-K4R" firstAttribute="top" secondItem="S5b-LL-tfY" secondAttribute="bottom" constant="5" id="qAz-kX-C3u"/>
                         </constraints>
                     </view>
                     <connections>
@@ -698,7 +708,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="398-ok-6Mp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3912" y="1102"/>
+            <point key="canvasLocation" x="3911.594202898551" y="1101.5625"/>
         </scene>
     </scenes>
     <resources>
@@ -719,6 +729,12 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
