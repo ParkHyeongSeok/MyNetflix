@@ -9,22 +9,29 @@
 import UIKit
 
 class UpcomingViewController: UIViewController {
+    
+    var awardsRecommendListViewController: RecommendListViewController!
+    var hotsRecommendListViewController: RecommendListViewController!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "awards" {
+            let destinationVC = segue.destination as? RecommendListViewController
+            awardsRecommendListViewController = destinationVC
+            destinationVC?.viewModel.updateType(.my)
+            destinationVC?.viewModel.fetchItems()
+        } else if segue.identifier == "hots" {
+            let destinationVC = segue.destination as? RecommendListViewController
+            hotsRecommendListViewController = destinationVC
+            destinationVC?.viewModel.updateType(.award)
+            destinationVC?.viewModel.fetchItems()
+        }
+    }
      
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "awards" {
-            let destinationVC = segue.destination as? RecommendListViewController
-            destinationVC?.viewModel.updateType(.award)
-            destinationVC?.viewModel.fetchItems()
-        } else if segue.identifier == "hots" {
-            let destinationVC = segue.destination as? RecommendListViewController
-            destinationVC?.viewModel.updateType(.hot)
-            destinationVC?.viewModel.fetchItems()
-        }
-    }
+    
     
 }
