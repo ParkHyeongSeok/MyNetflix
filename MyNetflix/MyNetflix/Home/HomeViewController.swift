@@ -58,5 +58,12 @@ class HomeViewController: UIViewController {
             }
             .disposed(by: rx.disposeBag)
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // 확인
+        UserDefaultsManager.shared.dbRepresentation(key: .initialLaunchKey)
+        UserDefaultsManager.shared.dbRepresentation(key: .thresholdKey)
+        UserDefaultsManager.shared.dbRepresentation(key: .query)
+    }
     
 }

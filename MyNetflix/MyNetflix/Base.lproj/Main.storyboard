@@ -249,7 +249,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjw-Dw-0Vf">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="934"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="834"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_header" translatesAutoresizingMaskIntoConstraints="NO" id="zf7-jn-mqq">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -257,25 +257,25 @@
                                                     <constraint firstAttribute="width" secondItem="zf7-jn-mqq" secondAttribute="height" multiplier="1:1" id="YRK-72-979"/>
                                                 </constraints>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j80-LB-7dc">
-                                                <rect key="frame" x="0.0" y="424" width="414" height="510"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j80-LB-7dc">
+                                                <rect key="frame" x="0.0" y="424" width="414" height="410"/>
                                                 <subviews>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gww-qe-1UK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="250" id="hne-9L-ciI"/>
+                                                            <constraint firstAttribute="height" constant="200" id="hne-9L-ciI"/>
                                                         </constraints>
                                                         <connections>
-                                                            <segue destination="JFa-ls-Fyu" kind="embed" identifier="awards" id="2D6-H1-WhQ"/>
+                                                            <segue destination="JFa-ls-Fyu" kind="embed" identifier="awards" id="XVJ-6K-wCL"/>
                                                         </connections>
                                                     </containerView>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o21-ws-Oj5">
-                                                        <rect key="frame" x="0.0" y="260" width="414" height="250"/>
+                                                        <rect key="frame" x="0.0" y="210" width="414" height="200"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="250" id="xvE-Wv-uZg"/>
+                                                            <constraint firstAttribute="height" constant="200" id="xvE-Wv-uZg"/>
                                                         </constraints>
                                                         <connections>
-                                                            <segue destination="up7-FT-NLH" kind="embed" identifier="hots" id="RdA-id-pe2"/>
+                                                            <segue destination="up7-FT-NLH" kind="embed" identifier="hots" id="JId-Pv-ZEf"/>
                                                         </connections>
                                                     </containerView>
                                                 </subviews>
@@ -311,7 +311,6 @@
                             <constraint firstItem="yz2-0l-r1W" firstAttribute="leading" secondItem="cEW-rw-DWC" secondAttribute="leading" id="Ntz-hA-0cW"/>
                             <constraint firstItem="yz2-0l-r1W" firstAttribute="top" secondItem="cEW-rw-DWC" secondAttribute="top" id="U49-Ho-jOa"/>
                             <constraint firstItem="yz2-0l-r1W" firstAttribute="trailing" secondItem="cEW-rw-DWC" secondAttribute="trailing" id="ZU0-fR-vcI"/>
-                            <constraint firstItem="cjw-Dw-0Vf" firstAttribute="height" secondItem="ce7-Bh-AkS" secondAttribute="height" priority="250" id="srd-Vm-rx8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="공개예정" image="play.rectangle.fill" catalog="system" id="pxU-OE-cdZ"/>
@@ -339,14 +338,48 @@
         <!--저장한 콘텐츠 목록-->
         <scene sceneID="G3y-va-xMY">
             <objects>
-                <viewController id="0DL-kq-S35" sceneMemberID="viewController">
+                <viewController id="0DL-kq-S35" customClass="QueryViewController" customModule="MyNetflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P9C-bK-D6z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lYG-IR-qLK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QueryTableViewCell" textLabel="p1b-hq-R5i" style="IBUITableViewCellStyleDefault" id="w1x-8F-2fL">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w1x-8F-2fL" id="PxA-0O-36s">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p1b-hq-R5i">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OYX-Ro-fRu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lYG-IR-qLK" firstAttribute="top" secondItem="OYX-Ro-fRu" secondAttribute="top" id="3SA-N0-hGa"/>
+                            <constraint firstItem="OYX-Ro-fRu" firstAttribute="trailing" secondItem="lYG-IR-qLK" secondAttribute="trailing" id="byI-fI-cvz"/>
+                            <constraint firstItem="OYX-Ro-fRu" firstAttribute="bottom" secondItem="lYG-IR-qLK" secondAttribute="bottom" id="y41-JE-6cq"/>
+                            <constraint firstItem="lYG-IR-qLK" firstAttribute="leading" secondItem="OYX-Ro-fRu" secondAttribute="leading" id="ydO-eH-mXQ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="저장한 콘텐츠 목록" image="square.and.arrow.down.fill" catalog="system" id="o4B-qf-7ZJ"/>
+                    <connections>
+                        <outlet property="queryTableView" destination="lYG-IR-qLK" id="XSH-9J-Jjz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igm-fa-Xmf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -576,37 +609,34 @@
             <objects>
                 <viewController id="JFa-ls-Fyu" customClass="RecommendListViewController" customModule="MyNetflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ojZ-eg-i75">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평론가 호평 미국 코미디 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGV-1w-qnd">
-                                <rect key="frame" x="8" y="6" width="155" height="69"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="평론가 호평 미국 코미디 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGV-1w-qnd">
+                                <rect key="frame" x="8" y="6" width="155" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HNu-9b-CAU">
-                                <rect key="frame" x="0.0" y="80" width="414" height="160"/>
+                                <rect key="frame" x="0.0" y="30.5" width="414" height="159.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="2FR-LO-Azy"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="DT6-oq-fvV">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="DT6-oq-fvV">
+                                    <size key="itemSize" width="128" height="145"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecommendCell" id="I9q-GA-NgU" customClass="RecommendCell" customModule="MyNetflix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="7.5" width="128" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eFL-sq-UwV">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Iw-M2-fFX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Iw-M2-fFX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="145"/>
                                                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 </imageView>
                                             </subviews>
@@ -617,8 +647,15 @@
                                                 <constraint firstItem="3Iw-M2-fFX" firstAttribute="leading" secondItem="eFL-sq-UwV" secondAttribute="leading" id="fjo-9X-mk0"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="thumbnailImage" destination="3Iw-M2-fFX" id="N4r-PL-vop"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="JFa-ls-Fyu" id="F9D-QN-Eqb"/>
+                                    <outlet property="delegate" destination="JFa-ls-Fyu" id="wBX-gL-S2z"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="viC-pY-uss"/>
@@ -645,22 +682,19 @@
             <objects>
                 <viewController id="up7-FT-NLH" customClass="RecommendListViewController" customModule="MyNetflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qxp-lJ-Uzu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평론가 호평 미국 코미디 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5b-LL-tfY">
-                                <rect key="frame" x="8" y="6" width="155" height="69"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="평론가 호평 미국 코미디 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5b-LL-tfY">
+                                <rect key="frame" x="8" y="6" width="155" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YVX-f3-K4R">
-                                <rect key="frame" x="0.0" y="80" width="414" height="160"/>
+                                <rect key="frame" x="0.0" y="30.5" width="414" height="159.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="sQj-pS-dMp"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="uoW-3s-hG8">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="uoW-3s-hG8">
                                     <size key="itemSize" width="128" height="145"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -668,13 +702,13 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecommendCell" id="noF-6s-mDZ" customClass="RecommendCell" customModule="MyNetflix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="145"/>
+                                        <rect key="frame" x="0.0" y="7.5" width="128" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6fo-1T-Jew">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-JL-GNW">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-JL-GNW">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="145"/>
                                                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 </imageView>
@@ -687,18 +721,25 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="128" height="145"/>
+                                        <connections>
+                                            <outlet property="thumbnailImage" destination="xKY-JL-GNW" id="Osx-bf-3sz"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="up7-FT-NLH" id="k03-x1-jKg"/>
+                                    <outlet property="delegate" destination="up7-FT-NLH" id="SB0-dm-MDB"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7qy-3P-IfF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="S5b-LL-tfY" firstAttribute="leading" secondItem="7qy-3P-IfF" secondAttribute="leading" constant="8" id="4Vb-8X-8xb"/>
-                            <constraint firstItem="7qy-3P-IfF" firstAttribute="trailing" secondItem="YVX-f3-K4R" secondAttribute="trailing" id="6sy-hP-LpN"/>
-                            <constraint firstItem="7qy-3P-IfF" firstAttribute="bottom" secondItem="YVX-f3-K4R" secondAttribute="bottom" constant="10" id="7jU-eO-Bgf"/>
+                            <constraint firstAttribute="trailing" secondItem="YVX-f3-K4R" secondAttribute="trailing" id="6sy-hP-LpN"/>
+                            <constraint firstAttribute="bottom" secondItem="YVX-f3-K4R" secondAttribute="bottom" constant="10" id="7jU-eO-Bgf"/>
                             <constraint firstItem="S5b-LL-tfY" firstAttribute="top" secondItem="qxp-lJ-Uzu" secondAttribute="top" constant="6" id="IPj-L7-acb"/>
-                            <constraint firstItem="YVX-f3-K4R" firstAttribute="leading" secondItem="7qy-3P-IfF" secondAttribute="leading" id="kth-ec-Msm"/>
+                            <constraint firstItem="YVX-f3-K4R" firstAttribute="leading" secondItem="qxp-lJ-Uzu" secondAttribute="leading" id="kth-ec-Msm"/>
                             <constraint firstItem="YVX-f3-K4R" firstAttribute="top" secondItem="S5b-LL-tfY" secondAttribute="bottom" constant="5" id="qAz-kX-C3u"/>
                         </constraints>
                     </view>
@@ -708,7 +749,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="398-ok-6Mp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3911.594202898551" y="1101.5625"/>
+            <point key="canvasLocation" x="3913" y="1119"/>
         </scene>
     </scenes>
     <resources>

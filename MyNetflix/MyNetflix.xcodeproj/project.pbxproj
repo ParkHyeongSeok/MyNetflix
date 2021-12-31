@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03A56FD2277E913700199CB7 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A56FD1277E913700199CB7 /* UserDefaultsManager.swift */; };
+		03A56FD4277E91B100199CB7 /* UserDefaultsManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A56FD3277E91B100199CB7 /* UserDefaultsManagerType.swift */; };
+		03A56FD7277EAAF800199CB7 /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A56FD6277EAAF800199CB7 /* QueryViewController.swift */; };
 		03EF475F277BFD5300F7EF4A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF475E277BFD5300F7EF4A /* Movie.swift */; };
 		03EF4761277BFD8F00F7EF4A /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4760277BFD8F00F7EF4A /* SearchAPI.swift */; };
 		03EF4763277BFDA600F7EF4A /* SearchApiType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4762277BFDA600F7EF4A /* SearchApiType.swift */; };
@@ -45,6 +48,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03A56FD1277E913700199CB7 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		03A56FD3277E91B100199CB7 /* UserDefaultsManagerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManagerType.swift; sourceTree = "<group>"; };
+		03A56FD6277EAAF800199CB7 /* QueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
 		03EF475E277BFD5300F7EF4A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		03EF4760277BFD8F00F7EF4A /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
 		03EF4762277BFDA600F7EF4A /* SearchApiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchApiType.swift; sourceTree = "<group>"; };
@@ -85,11 +91,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03A56FD0277E911100199CB7 /* PersistedStorage */ = {
+			isa = PBXGroup;
+			children = (
+				03A56FD3277E91B100199CB7 /* UserDefaultsManagerType.swift */,
+				03A56FD1277E913700199CB7 /* UserDefaultsManager.swift */,
+			);
+			path = PersistedStorage;
+			sourceTree = "<group>";
+		};
+		03A56FD5277EAAA600199CB7 /* DummyData */ = {
+			isa = PBXGroup;
+			children = (
+				03EF476C277C658300F7EF4A /* DummyData.swift */,
+			);
+			path = DummyData;
+			sourceTree = "<group>";
+		};
 		03EF4757277BFC9400F7EF4A /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				94DFD7542435DA88009687ED /* SearchViewController.swift */,
 				03EF4766277C061500F7EF4A /* ResultCollectionViewCell.swift */,
+				03EF4759277BFCBC00F7EF4A /* Play */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -98,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				940983622434692900FD1040 /* HomeViewController.swift */,
-				03EF475A277BFCD700F7EF4A /* Recommend */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -123,12 +146,12 @@
 			path = Recommend;
 			sourceTree = "<group>";
 		};
-		03EF475B277BFCE800F7EF4A /* Persisted */ = {
+		03EF475B277BFCE800F7EF4A /* QueryContent */ = {
 			isa = PBXGroup;
 			children = (
-				94098352243468AA00FD1040 /* AppTabbarController.swift */,
+				03A56FD6277EAAF800199CB7 /* QueryViewController.swift */,
 			);
-			path = Persisted;
+			path = QueryContent;
 			sourceTree = "<group>";
 		};
 		03EF475C277BFD2D00F7EF4A /* NetworkManager */ = {
@@ -189,14 +212,16 @@
 			children = (
 				9409834E243468AA00FD1040 /* AppDelegate.swift */,
 				94098350243468AA00FD1040 /* SceneDelegate.swift */,
-				03EF476C277C658300F7EF4A /* DummyData.swift */,
+				94098352243468AA00FD1040 /* AppTabbarController.swift */,
+				03A56FD5277EAAA600199CB7 /* DummyData */,
+				03A56FD0277E911100199CB7 /* PersistedStorage */,
 				03EF475C277BFD2D00F7EF4A /* NetworkManager */,
 				03EF475D277BFD3B00F7EF4A /* Model */,
 				03EF4758277BFCA300F7EF4A /* Home */,
+				03EF475A277BFCD700F7EF4A /* Recommend */,
 				03EF4757277BFC9400F7EF4A /* Search */,
 				03EF476E277CB34400F7EF4A /* Upcoming */,
-				03EF475B277BFCE800F7EF4A /* Persisted */,
-				03EF4759277BFCBC00F7EF4A /* Play */,
+				03EF475B277BFCE800F7EF4A /* QueryContent */,
 				94098354243468AA00FD1040 /* Main.storyboard */,
 				94098357243468AE00FD1040 /* Assets.xcassets */,
 				94098359243468AE00FD1040 /* LaunchScreen.storyboard */,
@@ -339,11 +364,14 @@
 				9409834F243468AA00FD1040 /* AppDelegate.swift in Sources */,
 				03EF4770277CB35500F7EF4A /* UpcomingViewController.swift in Sources */,
 				03EF4765277BFE2B00F7EF4A /* EndPoint.swift in Sources */,
+				03A56FD7277EAAF800199CB7 /* QueryViewController.swift in Sources */,
 				94098351243468AA00FD1040 /* SceneDelegate.swift in Sources */,
 				94DFD7532435CED7009687ED /* RecommendListViewController.swift in Sources */,
 				940983632434692900FD1040 /* HomeViewController.swift in Sources */,
 				03EF4763277BFDA600F7EF4A /* SearchApiType.swift in Sources */,
 				03EF476B277C655900F7EF4A /* RecommendCollectionViewCell.swift in Sources */,
+				03A56FD2277E913700199CB7 /* UserDefaultsManager.swift in Sources */,
+				03A56FD4277E91B100199CB7 /* UserDefaultsManagerType.swift in Sources */,
 				03EF4767277C061500F7EF4A /* ResultCollectionViewCell.swift in Sources */,
 				940983652434693600FD1040 /* PlayerViewController.swift in Sources */,
 				03EF4769277C64B600F7EF4A /* RecommendViewModel.swift in Sources */,
