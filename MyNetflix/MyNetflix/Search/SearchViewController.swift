@@ -28,8 +28,10 @@ class SearchViewController: UIViewController {
             .withLatestFrom(searchBar.rx.text.orEmpty)
             .flatMap(self.searchAPI.search(_:))
             .observe(on: MainScheduler.asyncInstance)
-            .do(onNext: { [unowned self] _ in
+            .do(onNext: { [unowned self] query in
                 self.searchBar.resignFirstResponder()
+                let text = self.searchBar.text ?? ""
+                UserDefaultsManager.shared.save(key: .query, value: [text])
             })
             .bind(to: resultCollectionView.rx.items(cellIdentifier: ResultCollectionViewCell.identifier, cellType: ResultCollectionViewCell.self)) { index, item, cell in
                 cell.updateUI(movie: item)
