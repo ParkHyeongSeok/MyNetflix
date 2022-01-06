@@ -11,4 +11,5 @@ import RxSwift
 
 protocol SearchApiType {
     func search(_ query: String) -> Observable<[Movie]>
+    func fetchRecommendItem(recommendingType: RecommendingType) -> Observable<[Movie]>
 }

@@ -10,22 +10,7 @@ import Foundation
 
 class RecommentListViewModel {
     
-    enum RecommendingType {
-        case award
-        case hot
-        case my
-        
-        var title: String {
-            switch self {
-            case .award: return "아카데미 호평 영황"
-            case .hot: return "취한저격 HOT 콘텐츠"
-            case .my: return "내가 찜한 콘텐츠"
-            
-            }
-        }
-    }
-    
-    private (set) var type: RecommendingType = .my
+    private(set) var type: RecommendingType = .my
     private var items: [DummyItem] = []
     
     var numOfItems: Int {
@@ -42,5 +27,20 @@ class RecommentListViewModel {
     
     func fetchItems() {
         self.items = MovieFetcher.fetch(type)
+    }
+}
+
+enum RecommendingType {
+    case award
+    case hot
+    case my
+    
+    var title: String {
+        switch self {
+        case .award: return "아카데미 호평 영황"
+        case .hot: return "취한저격 HOT 콘텐츠"
+        case .my: return "내가 찜한 콘텐츠"
+        
+        }
     }
 }
