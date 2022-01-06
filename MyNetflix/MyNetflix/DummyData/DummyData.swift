@@ -9,7 +9,7 @@
 import UIKit
 
 class MovieFetcher {
-    static func fetch(_ type: RecommentListViewModel.RecommendingType) -> [DummyItem] {
+    static func fetch(_ type: RecommendingType) -> [DummyItem] {
         switch type {
         case .award:
             let movies = (1..<10).map { DummyItem(thumbnail: UIImage(named: "img_movie_\($0)")!) }

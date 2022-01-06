@@ -22,4 +22,22 @@ class SearchAPI: SearchApiType {
                 return response.movies 
             }
     }
+    
+    func fetchRecommendItem(recommendingType: RecommendingType) -> Observable<[Movie]> {
+        var query: String!
+        switch recommendingType {
+        case .my:
+            query = "my"
+        case .award:
+            query = "award"
+        case .hot:
+            query = "hot"
+        }
+        let request = URLRequest(url: URL(string: query)!)
+        return self.urlSession.rx.data(request: request)
+            .map { data in
+                let response = try JSONDecoder().decode(NetworkResponse<Movie>.self, from: data)
+                return response.movies
+            }
+    }
 }
