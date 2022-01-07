@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036184E5278887AC00F1F16B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036184E4278887AC00F1F16B /* HomeViewModel.swift */; };
 		03A56FD2277E913700199CB7 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A56FD1277E913700199CB7 /* UserDefaultsManager.swift */; };
 		03A56FD4277E91B100199CB7 /* UserDefaultsManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A56FD3277E91B100199CB7 /* UserDefaultsManagerType.swift */; };
 		03A56FD7277EAAF800199CB7 /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A56FD6277EAAF800199CB7 /* QueryViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		036184E4278887AC00F1F16B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		03A56FD1277E913700199CB7 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		03A56FD3277E91B100199CB7 /* UserDefaultsManagerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManagerType.swift; sourceTree = "<group>"; };
 		03A56FD6277EAAF800199CB7 /* QueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		03EF4758277BFCA300F7EF4A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				036184E4278887AC00F1F16B /* HomeViewModel.swift */,
 				940983622434692900FD1040 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -371,6 +374,7 @@
 				03EF4763277BFDA600F7EF4A /* SearchApiType.swift in Sources */,
 				03EF476B277C655900F7EF4A /* RecommendCollectionViewCell.swift in Sources */,
 				03A56FD2277E913700199CB7 /* UserDefaultsManager.swift in Sources */,
+				036184E5278887AC00F1F16B /* HomeViewModel.swift in Sources */,
 				03A56FD4277E91B100199CB7 /* UserDefaultsManagerType.swift in Sources */,
 				03EF4767277C061500F7EF4A /* ResultCollectionViewCell.swift in Sources */,
 				940983652434693600FD1040 /* PlayerViewController.swift in Sources */,

@@ -14,7 +14,7 @@ import NSObject_Rx
 
 class HomeViewController: UIViewController {
     
-    private let searchAPI = SearchAPI()
+    private let homeViewModel = HomeViewModel(searchAPI: SearchAPI())
     
     @IBOutlet weak var playButton: UIButton!
     
@@ -43,8 +43,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         playButton.rx.tap
-            .withLatestFrom(searchAPI.search("interstellar"))
+            .withLatestFrom(homeViewModel.search("interstellar"))
             .compactMap { $0.first }
             .observe(on: MainScheduler.asyncInstance)
             .bind { movie in
@@ -57,6 +58,7 @@ class HomeViewController: UIViewController {
                 self.present(vc, animated: true, completion: nil)
             }
             .disposed(by: rx.disposeBag)
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
