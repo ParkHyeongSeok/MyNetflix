@@ -19,7 +19,7 @@ class SearchAPI: SearchApiType {
         return self.urlSession.rx.data(request: request)
             .map { data in
                 let response = try JSONDecoder().decode(NetworkResponse<Movie>.self, from: data)
-                return response.movies 
+                return response.movies.sorted(by: < )
             }
     }
     

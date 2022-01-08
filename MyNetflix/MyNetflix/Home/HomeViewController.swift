@@ -44,6 +44,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        playButton.layer.cornerRadius = 5
+        
         playButton.rx.tap
             .withLatestFrom(homeViewModel.search("interstellar"))
             .compactMap { $0.first }
