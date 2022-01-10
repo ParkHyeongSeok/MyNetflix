@@ -13,4 +13,5 @@ protocol UserDefaultsManagerType {
     associatedtype VALUE
     func save(key: KEY, value: [VALUE])
     func read(key: KEY) -> [VALUE]?
+    func delete(key: KEY)
 }
